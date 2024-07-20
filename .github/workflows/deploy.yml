@@ -55,11 +55,14 @@ jobs:
         run: mkdir -p ~/.ssh/
 
       - name: Keyscan
-        run: ssh-keyscan -H ${{ secrets.HOSTNAME }} >> ~/.ssh/known_hosts
+        run: |
+          echo "Running ssh-keyscan for ${{ secrets.HOSTNAME }}"
+          ssh-keyscan -p 65002 -H ${{ secrets.HOSTNAME }} >> ~/.ssh/known_hosts
+          cat ~/.ssh/known_hosts
 
       - name: Login server and deploy
         run: |
-          ssh -T ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }} << EOF
+          ssh -p 65002 -T ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }} << EOF
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} ${{ secrets.REGISTRY_URL }}
           docker pull mohamadalaskari/alaskari-design:latest
           docker stop my_container || true
