@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "22.5.1"
+          node-version: '22.5.1'
 
       - name: Install dependencies
         run: npm install
@@ -27,8 +27,11 @@ jobs:
       - name: Build Angular app
         run: ng build --configuration production
 
+      - name: Install rsync
+        run: sudo apt-get install -y rsync
+
       - name: Deploy to Hostinger
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
-          rsync -av --delete dist/ /path/to/hostinger/public_html/
+          rsync -av --delete dist/ /home/uXXXXXX/public_html/
