@@ -29,7 +29,7 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Build Angular app
-        run: ng build --configuration production
+        run: npm run build -- --configuration production
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
