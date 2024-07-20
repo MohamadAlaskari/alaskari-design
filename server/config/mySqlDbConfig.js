@@ -12,3 +12,5 @@ const dbConfig = {
 const sequelize = new Sequelize(dbConfig);
 
 module.exports = sequelize;
+
+
