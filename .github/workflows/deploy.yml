@@ -47,8 +47,14 @@ jobs:
           name: build-artifacts
           path: build-artifacts.tar.gz
 
+      - name: Create deployment directory
+        run: mkdir -p deployment
+
+      - name: Move build artifacts to deployment directory
+        run: mv build-artifacts.tar.gz deployment/
+
       - name: Extract build artifacts
-        run: tar -xzvf build-artifacts.tar.gz
+        run: tar -xzvf deployment/build-artifacts.tar.gz -C deployment
 
       - name: Setup SSH agent
         uses: webfactory/ssh-agent@v0.5.3
@@ -56,4 +62,4 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Secure Copy to Hostinger
-        run: scp -P 65002 -r dist/* u252525807@89.117.169.99:/home/u252525807/public_html/
+        run: scp -P 65002 -r deployment/* u252525807@89.117.169.99:/home/u252525807/public_html/
