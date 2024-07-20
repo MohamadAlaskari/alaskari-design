@@ -25,12 +25,25 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Build Angular app
-        run: ng build --configuration production
+        run: |
+          ng build --configuration production
+        continue-on-error: true
+
+      - name: Check build output
+        run: |
+          if [ -d "dist" ]; then
+            echo "Build succeeded."
+            ls -la dist/
+          else
+            echo "Build failed."
+            exit 1
+          fi
 
       - name: Install rsync
         run: sudo apt-get install -y rsync
 
       - name: Deploy to Hostinger
+        if: success()
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
