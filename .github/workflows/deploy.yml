@@ -19,15 +19,22 @@ jobs:
           node-version: '22.5.1'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          echo "Installing dependencies..."
+          npm install
+          echo "Dependencies installed."
 
       - name: Install Angular CLI
-        run: npm install -g @angular/cli
+        run: |
+          echo "Installing Angular CLI..."
+          npm install -g @angular/cli
+          echo "Angular CLI installed."
 
       - name: Build Angular app
         run: |
+          echo "Building Angular app..."
           ng build --configuration production
-        continue-on-error: true
+          echo "Angular app built."
 
       - name: Check build output
         run: |
