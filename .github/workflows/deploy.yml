@@ -46,9 +46,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: webfactory/ssh-agent@v0.9.0
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          ssh-private-key: ${{ secrets.SSH_AUTH_KEY }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Prepare SSH
         run: mkdir -p ~/.ssh/
