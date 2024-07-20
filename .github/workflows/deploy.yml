@@ -45,7 +45,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: build-artifacts
-          path: build-artifacts.tar.gz
 
       - name: Create deployment directory
         run: mkdir -p deployment
