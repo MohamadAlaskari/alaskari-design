@@ -38,6 +38,7 @@ jobs:
 
       - name: Check build output
         run: |
+          echo "Checking build output..."
           if [ -d "dist" ]; then
             echo "Build succeeded."
             ls -la dist/
@@ -54,4 +55,6 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
+          echo "Deploying to Hostinger..."
           rsync -av --delete dist/ /home/uXXXXXX/public_html/
+          echo "Deployment completed."
