@@ -34,14 +34,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.main{
+  height: 100vh;
+}
+.logo{
+  width: 9vmax;
+  height: 9vmax;
+  max-width: 80px;
+  max-height: 80px;
+}
+.logo-letter{
+  font-size: 72px;
+}
 h1 {
-  font-size: 3.125rem;
   color: var(--gray-900);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 100%;
   letter-spacing: -0.125rem;
   margin: 0;
-  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family:lemonada, "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
 }
@@ -51,38 +62,16 @@ p {
   color: var(--gray-700);
 }
 
-main {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
-  box-sizing: inherit;
-  position: relative;
-}
 
-.angular-logo {
-  max-width: 9.2rem;
-}
+
 .letter-spacing {
   letter-spacing: 1px;
 }
-.content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  max-width: 700px;
 
-  margin-bottom: 3rem;
-}
 
 .content p {
   margin-top: 1.5rem;
 }
-.content h1{ font-family: lemona;}
 
 .social-links {
   display: flex;
@@ -132,9 +121,14 @@ main {
   }
 }
 
+
+@media (min-width: 1200px) {
+  .h1, h1 {
+      font-size: 3.125rem;
+  }
+}
 @media screen and (max-width: 650px) {
-  .content {
-    flex-direction: column;
-    width: max-content;
+  .logo-letter{
+    font-size: calc(2.375rem + 1.5vw);
   }
 }
