@@ -66,6 +66,4 @@ jobs:
           ssh-keyscan -p ${{ secrets.PORT }} ${{ secrets.HOSTNAME }} >> ~/.ssh/known_hosts
 
       - name: Secure Copy to Hostinger
-        run: scp -P ${{ secrets.PORT }} -r deployment/* ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }}:/home/u252525807/public_html/
-
-        
+        run: scp -P ${{ secrets.PORT }} -r deployment/* ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }}:/home/${{ secrets.SSH_USER }}/public_html/
