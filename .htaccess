@@ -1,6 +1,9 @@
 RewriteEngine On
-RewriteBase /dist/alaskari-design/browser/
-RewriteRule ^index.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /dist/alaskari-design/browser/index.html [L]
+
+# Weiterleitung von HTTP zu HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Weiterleitung von nicht-www zu www
+RewriteCond %{HTTP_HOST} ^alaskaridesign\.com [NC]
+RewriteRule ^(.*)$ https://www.alaskaridesign.com/$1 [L,R=301]

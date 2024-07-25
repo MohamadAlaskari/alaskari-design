@@ -34,17 +34,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.main{
+.main {
   height: 100vh;
 }
-.logo{
+.logo {
   width: 9vmax;
   height: 9vmax;
   max-width: 80px;
   max-height: 80px;
 }
-.logo-letter{
+.logo-letter {
   font-size: 72px;
+  font-weight: 500;
 }
 h1 {
   color: var(--gray-900);
@@ -52,9 +53,9 @@ h1 {
   line-height: 100%;
   letter-spacing: -0.125rem;
   margin: 0;
-  font-family: 'Lemonada', cursive, "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: "Lemonada", cursive, "Inter Tight", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 p {
@@ -62,12 +63,9 @@ p {
   color: var(--gray-700);
 }
 
-
-
 .letter-spacing {
   letter-spacing: 1px;
 }
-
 
 .content p {
   margin-top: 1.5rem;
@@ -121,14 +119,14 @@ p {
   }
 }
 
-
 @media (min-width: 1200px) {
-  .h1, h1 {
-      font-size: 3.125rem;
+  .h1,
+  h1 {
+    font-size: 3.125rem;
   }
 }
 @media screen and (max-width: 650px) {
-  .logo-letter{
+  .logo-letter {
     font-size: calc(2.375rem + 1.5vw);
   }
 }

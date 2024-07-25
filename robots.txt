@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /private/
-Disallow: /temp/
-Disallow: /cgi-bin/
+Allow: /
 
-Sitemap: http://www.alaskaridesign.com/sitemap.xml
+Sitemap: https://www.alaskaridesign.com/sitemap.xml
