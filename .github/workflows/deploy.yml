@@ -28,7 +28,7 @@ jobs:
         run: npm run build -- --configuration alaskari-design
 
       - name: Archive production artifacts
-        run: tar -czvf build-artifacts.tar.gz -C dist .
+        run: tar -czvf build-artifacts.tar.gz -C dist/alaskari-design .
 
       - name: Upload production artifacts
         uses: actions/upload-artifact@v4
@@ -67,12 +67,9 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.PORT }} ${{ secrets.HOSTNAME }} >> ~/.ssh/known_hosts
 
-      - name: Verify SSH connection
-        run: ssh -p ${{ secrets.PORT }} ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }} "echo 'SSH connection successful'"
-
       - name: Secure Copy to Hostinger
         run: |
-          scp -P ${{ secrets.PORT }} -r deployment/* ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }}:/home/${{ secrets.SSH_USER }}/public_html/
+          scp -P ${{ secrets.PORT }} -r deployment/* ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }}:/home/${{ secrets.SSH_USER }}/public_html/alaskari-design/
           echo "Files copied to Hostinger"
-          ssh -p ${{ secrets.PORT }} ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }} "ls -la /home/${{ secrets.SSH_USER }}/public_html/"
+          ssh -p ${{ secrets.PORT }} ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }} "ls -la /home/${{ secrets.SSH_USER }}/public_html/alaskari-design/"
           echo "Deployment completed"
