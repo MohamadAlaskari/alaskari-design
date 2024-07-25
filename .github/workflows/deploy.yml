@@ -25,7 +25,7 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Build Angular app
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration alaskari-design
 
       - name: Archive production artifacts
         run: tar -czvf build-artifacts.tar.gz -C dist .
@@ -53,7 +53,9 @@ jobs:
         run: mv build-artifacts.tar.gz deployment/
 
       - name: Extract build artifacts
-        run: tar -xzvf deployment/build-artifacts.tar.gz -C deployment
+        run: |
+          tar -xzvf deployment/build-artifacts.tar.gz -C deployment
+          ls -la deployment
 
       - name: Setup SSH agent
         uses: webfactory/ssh-agent@v0.9.0
@@ -65,8 +67,12 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.PORT }} ${{ secrets.HOSTNAME }} >> ~/.ssh/known_hosts
 
+      - name: Verify SSH connection
+        run: ssh -p ${{ secrets.PORT }} ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }} "echo 'SSH connection successful'"
+
       - name: Secure Copy to Hostinger
         run: |
           scp -P ${{ secrets.PORT }} -r deployment/* ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }}:/home/${{ secrets.SSH_USER }}/public_html/
-          ls -la deployment/
+          echo "Files copied to Hostinger"
+          ssh -p ${{ secrets.PORT }} ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }} "ls -la /home/${{ secrets.SSH_USER }}/public_html/"
           echo "Deployment completed"
