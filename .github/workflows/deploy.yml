@@ -63,7 +63,7 @@ jobs:
       - name: Add Hostinger host key
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -p 65002 89.117.169.99 >> ~/.ssh/known_hosts
+          ssh-keyscan -p ${{ secrets.PORT }} ${{ secrets.HOSTNAME }} >> ~/.ssh/known_hosts
 
       - name: Secure Copy to Hostinger
-        run: scp -P 65002 -r deployment/* u252525807@89.117.169.99:/home/u252525807/public_html/
+        run: scp -P ${{ secrets.PORT }} -r deployment/* ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME }}:/home/u252525807/public_html/
