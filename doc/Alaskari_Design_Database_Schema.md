@@ -210,4 +210,4 @@ The `employee_projects` table stores the relationships between employees and the
 - An employee can work on multiple projects, and a project can have multiple employees (n:m relationship between `employees` and `projects` managed through `employee_projects`).
 
 
-[x] ![ER Diagram](https://your-image-link-here)
+[] ![ER Diagram](https://your-image-link-here)
