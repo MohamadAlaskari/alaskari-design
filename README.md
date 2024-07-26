@@ -12,12 +12,13 @@ The Alaskari Design web application is designed to streamline various business o
 
 ## Technologies Used
 
-- Backend: Node.js, Express.js
-- Frontend: Angular 18
-- Database: MySQL
-- ORM: Sequelize
-- Authentication: JWT
-- Version Control: Git
+- **Backend**: Node.js, Express.js
+- **Frontend**: Angular 18
+- **Database**: MySQL
+- **ORM**: Sequelize
+- **UI-Framework**: Bootstrap (mit Popper.js)
+- **Authentication**: JWT
+- **Version Control**: Git
 
 ## Contribution
 
@@ -33,11 +34,7 @@ For any questions or suggestions, please feel free to contact us at [dev@alaskar
 
 Thank you for your interest in the Alaskari Design web application! We look forward to building an amazing platform together.
 
-## Technologie-Stack
 
-- **Frontend**: Angular 18 mit Server-Side Rendering (SSR)
-- **Backend**: Express.js, Sequelize, MySQL, dotenv
-- **UI-Framework**: Bootstrap (mit Popper.js)
 
 ## Inhaltsverzeichnis
 
