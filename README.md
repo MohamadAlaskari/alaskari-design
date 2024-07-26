@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## About Alaskari Design Web Application
 Welcome to the repository for the Alaskari Design web application! This project is dedicated to developing a comprehensive web application for Alaskari Design, a company specializing in web development and graphic design services.
 
-##Project Overview
+## Project Overview
 The Alaskari Design web application is designed to streamline various business operations, including user management, project tracking, task assignment, and service offerings. Our goal is to create a robust and efficient platform that supports the needs of both employees and clients.
 
 ## Technologie-Stack
