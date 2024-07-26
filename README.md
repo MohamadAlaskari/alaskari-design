@@ -3,10 +3,35 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
 ## About Alaskari Design Web Application
+
 Welcome to the repository for the Alaskari Design web application! This project is dedicated to developing a comprehensive web application for Alaskari Design, a company specializing in web development and graphic design services.
 
 ## Project Overview
+
 The Alaskari Design web application is designed to streamline various business operations, including user management, project tracking, task assignment, and service offerings. Our goal is to create a robust and efficient platform that supports the needs of both employees and clients.
+
+## Technologies Used
+
+- Backend: Node.js, Express.js
+- Frontend: Angular 18
+- Database: MySQL
+- ORM: Sequelize
+- Authentication: JWT
+- Version Control: Git
+
+## Contribution
+
+We welcome contributions from the community! If you have ideas for improvements or new features, feel free to fork the repository, make your changes, and submit a pull request. Please ensure your contributions align with our project's coding standards and guidelines.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Contact
+
+For any questions or suggestions, please feel free to contact us at [dev@alaskaridesign.com].
+
+Thank you for your interest in the Alaskari Design web application! We look forward to building an amazing platform together.
 
 ## Technologie-Stack
 
