@@ -1,29 +1,33 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../config/mySqlDb.config';
 
-class Role extends Model {
+class Client extends Model {
   public id!: number;
-  public roleName!: string;
+  public userId!: number;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
-Role.init(
+Client.init(
   {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       primaryKey: true,
     },
-    roleName: {
-      type: new DataTypes.STRING(50),
+    userId: {
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
+      references: {
+        model: 'users',
+        key: 'id',
+      },
     },
   },
   {
-    tableName: 'roles',
+    tableName: 'clients',
     sequelize,
   }
 );
 
-export default Role;
+export default Client;

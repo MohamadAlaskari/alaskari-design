@@ -1,29 +1,29 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../config/mySqlDb.config';
 
-class Role extends Model {
+class JobTitle extends Model {
   public id!: number;
-  public roleName!: string;
+  public jobTitleName!: string;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
-Role.init(
+JobTitle.init(
   {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
       autoIncrement: true,
       primaryKey: true,
     },
-    roleName: {
+    jobTitleName: {
       type: new DataTypes.STRING(50),
       allowNull: false,
     },
   },
   {
-    tableName: 'roles',
+    tableName: 'job_titles',
     sequelize,
   }
 );
 
-export default Role;
+export default JobTitle;
