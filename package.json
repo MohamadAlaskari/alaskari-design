@@ -24,7 +24,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:alaskari-design": "node dist/alaskari-design/server/server.mjs"
+    "serve:ssr:alaskari-design": "node dist/alaskari-design/server/server.mjs",
+    "sync-models": "ts-node -P tsconfig.server.json server/bin/syncModels.ts",
+    "drop-tables": "ts-node -P tsconfig.server.json server/bin/dropTables.ts"
   },
   "private": true,
   "dependencies": {
@@ -61,6 +63,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ts-node": "^10.9.2",
     "typescript": "~5.5.2"
   }
 }

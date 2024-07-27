@@ -89,7 +89,7 @@ The `accounts` table stores account-related information for users who have accou
 
 The `roles` table stores the different roles that a user can have, such as admin, employee, or client.
 
-- **Table Name**: roles
+- **Table Name**:   
 - **Attributes**:
   - role_id: INT, Primary Key
   - role_name: VARCHAR(50)
